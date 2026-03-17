@@ -1,0 +1,56 @@
+TAPTICO DESIGN SOP v1.0 - KEY GUIDELINES
+
+BRAND COLORS:
+- Background: #000000 (Pitch Black)
+- Primary Text: #FFFFFF (White)
+- Secondary/Muted Text: ~#8b9ab5 (cool grey)
+- Accent / Highlight: Navy/Royal Blue (#003087 or similar) + Cyan (#00FFFF) for glow effects
+- CTA Button: Navy Blue background, White text
+- Navigation Background: dark/semi-transparent
+
+LOGO RULES:
+- Dark backgrounds: WHITE logo variant (Whitelogo-nobackground.webp)
+- Light backgrounds: BLACK logo variant (Blacklogo-nobackground.webp)
+- Logo dynamically switches based on theme
+
+TYPOGRAPHY:
+- Headlines: Clean modern sans-serif (Space Grotesk or similar), bold/heavy weight
+- Body: Inter or similar clean sans-serif
+- H1: Large, cinematic (clamp 2.8rem to 5.5rem)
+- H2: clamp 2rem to 3rem
+- Body: 1rem, line-height 1.6-1.8
+- Min text size on mobile: 16px
+
+LAYOUT:
+- Section Padding: 100px top/bottom
+- Container Max-Width: 1100px
+- Hero: 100vh, full screen
+- Section Style: content-driven (not all 100vh)
+
+ANIMATION STANDARDS:
+- Scroll-triggered reveals: fade up from opacity 0, translateY 28px
+- Word-by-word stagger: 0.05s per word, GSAP or CSS
+- Accent Line (Lightsaber Effect): 4px wide, Navy Blue or Cyan, glow blur 12-20px, left edge of section container, opacity 70-90%
+- Watermark Numbers: 400px font, 4% opacity, white, left-aligned vertically centered
+- CTA Button hover: scale(1.03), increased glow, 0.2s ease
+- Mobile fallback: replace complex animations with simple fade-in on scroll
+
+SIGNATURE TAPTICO DESIGN ELEMENTS:
+- Accent "lightsaber" line on left edge of premium sections
+- Large watermark numbers in background of multi-step sections
+- Cinematic full-screen hero
+- Glowing effects on interactive elements
+- Step-and-repeat logo watermark background (greyscale)
+
+QUALITY CHECKLIST:
+- Layout feels cinematic and full-screen
+- All text legible with sufficient contrast
+- Brand colors applied correctly
+- Animations trigger at right points
+- CTA stands out clearly
+- Mobile layout clean and readable
+
+SLS BRAND:
+- Logo: sls_main_logo_full_color.png (sun rays above "SOUTHERN LIGHTING SOURCE" text)
+- Colors: Black/dark brown text, gold/yellow sun rays
+- Use on dark backgrounds with appropriate treatment (white version or on a contrasting panel)
