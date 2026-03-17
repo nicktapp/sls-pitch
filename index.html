@@ -51,8 +51,74 @@
       color: var(--white);
       overflow-x: hidden;
       line-height: 1.6;
-      transition: background-color 0.25s ease, color 0.2s ease;
+      transition: background-color 0.3s ease, color 0.25s ease;
     }
+
+    /* ============================================================
+       LIGHT MODE — body.light-mode overrides
+    ============================================================ */
+    body.light-mode {
+      --black:      #f4f6fb;
+      --dark:       #e8ecf4;
+      --dark2:      #dde3ef;
+      --card:       #ffffff;
+      --card2:      #f0f4fb;
+      --border:     rgba(0,0,0,0.09);
+      --white:      #0d1117;
+      --muted:      #5a6a82;
+      --blue-glow:  rgba(29,110,245,0.2);
+      --cyan-glow:  rgba(0,212,255,0.15);
+    }
+    body.light-mode nav {
+      background: rgba(244,246,251,0.92) !important;
+      border-bottom-color: rgba(0,0,0,0.08);
+    }
+    body.light-mode .nav-logo img { content: url('assets/taptico-logo-black.webp'); }
+    body.light-mode footer { background: #e8ecf4; border-top-color: rgba(0,0,0,0.08); }
+    body.light-mode .hero-grid {
+      background-image:
+        linear-gradient(rgba(29,110,245,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(29,110,245,0.07) 1px, transparent 1px);
+    }
+    body.light-mode .hero-logo-repeat { opacity: 0.04; }
+    body.light-mode .agent-card:hover { box-shadow: 0 16px 48px rgba(0,48,135,0.1); }
+    body.light-mode .jensen-quote-block { background: rgba(0,48,135,0.06); border-color: rgba(29,110,245,0.3); }
+    body.light-mode .nemoclaw-banner { background: rgba(0,48,135,0.06); border-color: rgba(29,110,245,0.25); }
+
+    /* ============================================================
+       THEME TOGGLE
+    ============================================================ */
+    .theme-toggle {
+      display: flex; align-items: center; gap: 8px;
+      cursor: pointer; margin-left: 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: 0.75rem; font-weight: 600;
+      color: var(--muted);
+      transition: all 0.2s;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .theme-toggle:hover { border-color: rgba(29,110,245,0.4); color: var(--white); }
+    .toggle-track {
+      width: 32px; height: 18px; border-radius: 9px;
+      background: var(--card2);
+      border: 1px solid var(--border);
+      position: relative;
+      transition: background 0.25s;
+      flex-shrink: 0;
+    }
+    .toggle-thumb {
+      position: absolute; top: 2px; left: 2px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--muted);
+      transition: transform 0.25s, background 0.25s;
+    }
+    body.light-mode .toggle-track { background: var(--blue); border-color: var(--blue); }
+    body.light-mode .toggle-thumb { transform: translateX(14px); background: #fff; }
+    body.light-mode .theme-toggle { background: rgba(0,0,0,0.05); color: var(--muted); }
 
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--dark); }
@@ -472,6 +538,100 @@
     }
     .step-text strong { display: block; color: var(--white); font-size: 0.9rem; margin-bottom: 3px; }
     .step-text span { color: var(--muted); font-size: 0.85rem; }
+
+    /* ============================================================
+       JENSEN QUOTE BLOCK
+    ============================================================ */
+    .jensen-quote-block {
+      background: rgba(0,48,135,0.08);
+      border: 1px solid rgba(29,110,245,0.2);
+      border-radius: 20px;
+      padding: 44px 52px;
+      margin: 0 0 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .jensen-quote-block::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 0% 50%, rgba(0,48,135,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .jensen-quotes-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+      position: relative; z-index: 1;
+    }
+    .jensen-quote {
+      padding: 24px;
+      background: rgba(0,0,0,0.15);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+    }
+    .jensen-quote-mark {
+      font-size: 2.5rem; line-height: 1;
+      color: var(--blue2); opacity: 0.5;
+      font-family: Georgia, serif;
+      margin-bottom: 8px;
+    }
+    .jensen-quote-text {
+      font-size: 0.925rem; color: var(--white);
+      line-height: 1.7; font-style: italic; margin-bottom: 16px;
+    }
+    .jensen-quote-attr {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--blue2);
+    }
+    .jensen-header {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 32px; position: relative; z-index: 1;
+    }
+    .jensen-avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--blue2));
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 1rem; color: #fff;
+      flex-shrink: 0;
+      border: 2px solid rgba(29,110,245,0.4);
+    }
+    .jensen-meta strong { display: block; color: var(--white); font-size: 0.9rem; }
+    .jensen-meta span { color: var(--muted); font-size: 0.78rem; }
+
+    /* ============================================================
+       NEMOCLAW PATHWAY BANNER
+    ============================================================ */
+    .nemoclaw-banner {
+      background: rgba(0,48,135,0.1);
+      border: 1px solid rgba(29,110,245,0.25);
+      border-radius: 16px;
+      padding: 32px 40px;
+      margin-top: 56px;
+      display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
+    }
+    .nemoclaw-banner-left h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 10px;
+    }
+    .nemoclaw-banner-left p { font-size: 0.875rem; color: var(--muted); line-height: 1.7; }
+    .nemoclaw-phases {
+      display: flex; flex-direction: column; gap: 10px; min-width: 260px;
+    }
+    .nemoclaw-phase {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 16px; border-radius: 10px;
+      font-size: 0.82rem; font-weight: 600;
+    }
+    .nemoclaw-phase.phase-active {
+      background: rgba(52,211,153,0.1);
+      border: 1px solid rgba(52,211,153,0.25);
+      color: #34d399;
+    }
+    .nemoclaw-phase.phase-future {
+      background: rgba(29,110,245,0.08);
+      border: 1px solid rgba(29,110,245,0.2);
+      color: var(--blue2);
+    }
+    .phase-icon { font-size: 1rem; flex-shrink: 0; }
 
     /* ============================================================
        SLINGSHOT SQUAD
@@ -1008,6 +1168,10 @@
     <li><a href="#needs">SLS Roadmap</a></li>
     <li><a href="#hardware">Infrastructure</a></li>
   </ul>
+  <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
+    <div class="toggle-track"><div class="toggle-thumb"></div></div>
+    <span id="theme-label">Light</span>
+  </button>
   <a class="nav-cta" href="#cta">Let's Start</a>
 </nav>
 
@@ -1121,7 +1285,35 @@
         Powered by OpenClaw
       </div>
       <h2>Meet the Slingshot Squad.</h2>
-      <p class="section-sub" style="margin:16px auto 0;max-width:560px;">50+ specialized AI agents working 24/7 on your behalf. Each one is purpose-built for a specific job — and they never clock out.</p>
+      <p class="section-sub" style="margin:16px auto 0;max-width:600px;">During the Dating Phase, SLS gets full access to Taptico's own Slingshot Squad — 50+ specialized AI agents working 24/7 on your behalf. If you love what you see, Phase 2 is yours: a custom-built AI system on your own OpenClaw infrastructure, secured by NVIDIA's newly announced NemoClaw.</p>
+    </div>
+
+    <!-- Jensen Huang Quote Block -->
+    <div class="jensen-quote-block reveal">
+      <div class="jensen-header">
+        <div class="jensen-avatar">JH</div>
+        <div class="jensen-meta">
+          <strong>Jensen Huang, CEO — NVIDIA</strong>
+          <span>GTC 2026 Keynote &nbsp;·&nbsp; San Jose, CA &nbsp;·&nbsp; March 16, 2026</span>
+        </div>
+      </div>
+      <div class="jensen-quotes-grid">
+        <div class="jensen-quote">
+          <div class="jensen-quote-mark">&ldquo;</div>
+          <div class="jensen-quote-text">Every company in the world today needs to have an OpenClaw strategy, an agentic system strategy. This is the new computer.</div>
+          <div class="jensen-quote-attr">On the OpenClaw imperative</div>
+        </div>
+        <div class="jensen-quote">
+          <div class="jensen-quote-mark">&ldquo;</div>
+          <div class="jensen-quote-text">OpenClaw is probably the single most important release of software, probably ever. It gave the industry exactly what it needed at exactly the time.</div>
+          <div class="jensen-quote-attr">On OpenClaw's significance</div>
+        </div>
+        <div class="jensen-quote">
+          <div class="jensen-quote-mark">&ldquo;</div>
+          <div class="jensen-quote-text">OpenClaw is the operating system for personal AI. It has made it possible for the entire industry to grab onto this open-source stack and go do something with it.</div>
+          <div class="jensen-quote-attr">On OpenClaw's role in AI</div>
+        </div>
+      </div>
     </div>
 
     <div class="squad-grid">
@@ -1186,6 +1378,24 @@
     <div class="squad-footer reveal">
       <div class="squad-count">50+</div>
       <div class="squad-count-label">AI agents deployed on your behalf · Running 24 hours a day, 7 days a week</div>
+    </div>
+
+    <!-- NemoClaw Pathway Banner -->
+    <div class="nemoclaw-banner reveal">
+      <div class="nemoclaw-banner-left">
+        <h4>Phase 1: Taptico's Squad. Phase 2: Yours.</h4>
+        <p>During the 90-day Dating Phase, you run on Taptico's battle-tested Slingshot Squad — no infrastructure cost, no setup delay, results from day one. If you decide to continue, we build SLS a fully custom AI system on your own OpenClaw infrastructure, with <strong style="color:var(--white);">NVIDIA NemoClaw</strong> as the security and privacy layer — announced by Jensen Huang at GTC 2026 on March 16th. Your agents. Your data. Your hardware. Secured by NVIDIA.</p>
+      </div>
+      <div class="nemoclaw-phases">
+        <div class="nemoclaw-phase phase-active">
+          <span class="phase-icon">✓</span>
+          <span>Phase 1 — Taptico Slingshot Squad (Days 1–90)</span>
+        </div>
+        <div class="nemoclaw-phase phase-future">
+          <span class="phase-icon">→</span>
+          <span>Phase 2 — Custom OpenClaw + NemoClaw Build</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1625,13 +1835,39 @@
   ['bids','apv','winrate'].forEach(id => document.getElementById(id).addEventListener('input', calcROI));
   calcROI();
 
-  // ---- Nav scroll effect ----
-  window.addEventListener('scroll', () => {
+  // ---- Theme toggle ----
+  function toggleTheme() {
+    const isLight = document.body.classList.toggle('light-mode');
+    document.getElementById('theme-label').textContent = isLight ? 'Dark' : 'Light';
+    localStorage.setItem('taptico-theme', isLight ? 'light' : 'dark');
+    // Update nav scroll background for current mode
+    updateNavBg();
+  }
+
+  function updateNavBg() {
     const nav = document.getElementById('main-nav');
-    nav.style.background = window.scrollY > 60
-      ? 'rgba(0,0,0,0.97)'
-      : 'rgba(0,0,0,0.88)';
-  });
+    const isLight = document.body.classList.contains('light-mode');
+    if (isLight) {
+      nav.style.background = '';
+    } else {
+      nav.style.background = window.scrollY > 60 ? 'rgba(0,0,0,0.97)' : 'rgba(0,0,0,0.88)';
+    }
+  }
+
+  // Respect system preference or saved preference on load
+  (function() {
+    const saved = localStorage.getItem('taptico-theme');
+    const preferLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    if (saved === 'light' || (!saved && preferLight)) {
+      document.body.classList.add('light-mode');
+      const lbl = document.getElementById('theme-label');
+      if (lbl) lbl.textContent = 'Dark';
+    }
+  })();
+
+  // ---- Nav scroll effect ----
+  window.addEventListener('scroll', updateNavBg);
+  updateNavBg();
 
   // ---- CTA button hover glow (SOP: scale 1.03, increased glow, 0.2s ease) ----
   document.querySelectorAll('.btn-primary').forEach(btn => {
