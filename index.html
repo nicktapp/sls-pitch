@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Taptico Solutions × Southern Lighting Source</title>
+  <title>Southern Lighting Source × Taptico Solutions — AI Proposal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -135,9 +135,9 @@
       letter-spacing: 0.06em; text-transform: uppercase;
     }
     .nav-client-badge img {
-      height: 22px; width: auto;
+      height: 28px; width: auto;
       filter: brightness(0) invert(1);
-      opacity: 0.7;
+      opacity: 0.85;
     }
     .nav-links { display: flex; gap: 28px; list-style: none; }
     .nav-links a {
@@ -184,13 +184,13 @@
       mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%);
     }
 
-    /* Step-and-repeat Taptico logo watermark (greyscale) */
+    /* Step-and-repeat SLS sun icon watermark (greyscale) */
     .hero-logo-repeat {
       position: absolute; inset: 0; z-index: 0;
-      background-image: url('assets/taptico-logo-white.webp');
-      background-size: 180px auto;
+      background-image: url('assets/sls-sun-icon.png');
+      background-size: 140px auto;
       background-repeat: repeat;
-      opacity: 0.025;
+      opacity: 0.03;
       filter: grayscale(1);
       mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 80%);
     }
@@ -218,12 +218,36 @@
       50% { transform: translateX(-50%) translateY(-40px); }
     }
 
-    /* Co-brand strip */
+    /* Hero SLS centerpiece */
     .hero-cobrand {
-      display: flex; align-items: center; gap: 20px;
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
       margin-bottom: 40px;
       position: relative; z-index: 1;
       opacity: 0;
+    }
+    .hero-sls-sun {
+      width: 180px; height: auto;
+      filter: drop-shadow(0 0 40px rgba(201,162,39,0.5)) drop-shadow(0 0 80px rgba(201,162,39,0.2));
+      animation: sunGlow 4s ease-in-out infinite;
+    }
+    @keyframes sunGlow {
+      0%, 100% { filter: drop-shadow(0 0 40px rgba(201,162,39,0.5)) drop-shadow(0 0 80px rgba(201,162,39,0.2)); }
+      50% { filter: drop-shadow(0 0 60px rgba(201,162,39,0.75)) drop-shadow(0 0 120px rgba(201,162,39,0.35)); }
+    }
+    .hero-sls-wordmark {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+    .cobrand-presented-by {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.72rem; font-weight: 600; color: var(--muted);
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .cobrand-presented-by img {
+      height: 22px; width: auto;
+      opacity: 0.65;
     }
     .cobrand-logo { height: 40px; width: auto; }
     .cobrand-logo.taptico { height: 36px; }
@@ -233,7 +257,6 @@
       color: var(--muted); opacity: 0.6;
     }
     .cobrand-sls {
-      /* SLS logo on dark bg — add a subtle backing */
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 8px;
@@ -935,8 +958,8 @@
     .footer-logo img { height: 28px; width: auto; }
     .footer-logo-divider { width: 1px; height: 20px; background: var(--border); }
     .footer-logo-sls img {
-      height: 22px; width: auto;
-      filter: brightness(0) invert(1); opacity: 0.5;
+      height: 28px; width: auto;
+      filter: brightness(0) invert(1); opacity: 0.55;
     }
     .footer-copy { font-size: 0.78rem; color: var(--muted); }
     .footer-links { display: flex; gap: 24px; }
@@ -976,7 +999,7 @@
   <div class="nav-divider"></div>
   <div class="nav-client-badge">
     <span>Prepared for</span>
-    <img src="assets/sls-logo.png" alt="Southern Lighting Source" />
+    <img src="assets/sls-sun-icon.png" alt="Southern Lighting Source" />
   </div>
   <ul class="nav-links">
     <li><a href="#dating">Engagement</a></li>
@@ -995,27 +1018,28 @@
   <div class="hero-orb orb-1"></div>
   <div class="hero-orb orb-2"></div>
 
-  <!-- Co-brand logos -->
+  <!-- SLS hero centerpiece -->
   <div class="hero-cobrand" id="hero-cobrand">
-    <img class="cobrand-logo taptico" src="assets/taptico-logo-white.webp" alt="Taptico Solutions" />
-    <span class="cobrand-x">×</span>
-    <div class="cobrand-sls">
-      <img class="cobrand-logo" src="assets/sls-logo.png" alt="Southern Lighting Source" style="height:36px;" />
+    <img class="hero-sls-sun" src="assets/sls-sun-icon.png" alt="Southern Lighting Source" />
+    <div class="hero-sls-wordmark">Southern Lighting Source</div>
+    <div class="cobrand-presented-by">
+      <span>A proposal from</span>
+      <img src="assets/taptico-logo-white.webp" alt="Taptico Solutions" />
     </div>
   </div>
 
   <div class="hero-badge" id="hero-badge">
     <span class="badge-dot"></span>
-    Prepared exclusively for Southern Lighting Source
+    Confidential AI Proposal · March 2026
   </div>
 
   <h1 class="hero-title" id="hero-title">
-    Your Business.<br />
-    <span class="gradient-text">Supercharged by AI.</span>
+    SLS, meet your<br />
+    <span class="gradient-text">unfair advantage.</span>
   </h1>
 
   <p class="hero-sub" id="hero-sub">
-    Taptico Solutions deploys a full AI growth system — purpose-built for SLS — to automate business development, hunt opportunities 24/7, and give your team a command center they'll actually use.
+    A purpose-built AI growth system for Southern Lighting Source — designed around your team, your market, and the exact priorities you shared with us. This is your roadmap.
   </p>
 
   <div class="hero-actions" id="hero-actions">
@@ -1455,55 +1479,7 @@
   </div>
 </section>
 
-<!-- ==================== TESTIMONIALS ==================== -->
-<section id="testimonials">
-  <div class="container">
-    <div class="testimonials-header">
-      <div class="section-label" style="justify-content:center;">
-        <span style="display:block;width:24px;height:2px;background:linear-gradient(90deg,var(--navy),var(--blue2));"></span>
-        Social Proof
-      </div>
-      <h2>What clients say.</h2>
-      <p class="section-sub" style="margin:16px auto 0;max-width:500px;">Early partners on the Taptico AI Growth System are seeing results within the first 30 days.</p>
-    </div>
 
-    <div class="testimonials-grid">
-      <div class="testimonial-card reveal">
-        <div class="stars">★★★★★</div>
-        <div class="testimonial-text">"The Bid Hunting Agent found three opportunities in the first week that our team had completely missed. One of them turned into a $200K project. The ROI was obvious before the 90 days were even up."</div>
-        <div class="testimonial-author">
-          <div class="author-avatar">JM</div>
-          <div>
-            <div class="author-name">James M.</div>
-            <div class="author-title">VP of Business Development · Commercial Lighting Distributor</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card reveal">
-        <div class="stars">★★★★★</div>
-        <div class="testimonial-text">"The Grid replaced three different tools we were using and our team actually adopted it — which never happens. The role-based views mean everyone sees exactly what they need. No more 'where's that quote?' emails."</div>
-        <div class="testimonial-author">
-          <div class="author-avatar">SR</div>
-          <div>
-            <div class="author-name">Sarah R.</div>
-            <div class="author-title">Director of Operations · Regional Electrical Distributor</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card reveal">
-        <div class="stars">★★★★★</div>
-        <div class="testimonial-text">"Having the AI on-premise was the deciding factor for us. Our data stays at our office — full stop. The OpenClaw setup was seamless and now we have an AI system that runs 24/7 without us thinking about it."</div>
-        <div class="testimonial-author">
-          <div class="author-avatar">DK</div>
-          <div>
-            <div class="author-name">David K.</div>
-            <div class="author-title">President · Industrial Supply Company</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ==================== CTA ==================== -->
 <section id="cta">
@@ -1511,8 +1487,8 @@
     <div class="cta-cobrand">
       <img class="taptico-cta" src="assets/taptico-logo-white.webp" alt="Taptico Solutions" />
       <span class="cta-cobrand-x">×</span>
-      <div class="cta-cobrand sls-cta" style="display:flex;align-items:center;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:6px 14px;">
-        <img src="assets/sls-logo.png" alt="Southern Lighting Source" style="height:28px;" />
+      <div class="cta-cobrand sls-cta" style="display:flex;align-items:center;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 16px;">
+        <img src="assets/sls-sun-icon.png" alt="Southern Lighting Source" style="height:40px;" />
       </div>
     </div>
     <div class="cta-eyebrow">Ready to start?</div>
@@ -1535,7 +1511,7 @@
     <img src="assets/taptico-logo-white.webp" alt="Taptico Solutions" />
     <div class="footer-logo-divider"></div>
     <div class="footer-logo-sls">
-      <img src="assets/sls-logo.png" alt="Southern Lighting Source" />
+      <img src="assets/sls-sun-icon.png" alt="Southern Lighting Source" />
     </div>
   </div>
   <div class="footer-copy">© 2026 Taptico Holdings, LLC d/b/a Taptico Solutions. Prepared exclusively for Southern Lighting Source.</div>
@@ -1583,7 +1559,7 @@
   });
 
   // ---- Stagger grid children ----
-  document.querySelectorAll('.squad-grid, .needs-grid, .testimonials-grid, .data-tiers').forEach(grid => {
+  document.querySelectorAll('.squad-grid, .needs-grid, .data-tiers').forEach(grid => {
     const cards = grid.querySelectorAll('.reveal');
     cards.forEach((card, i) => {
       ScrollTrigger.create({
