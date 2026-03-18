@@ -1131,6 +1131,149 @@
     .footer-links a:hover { color: var(--white); }
 
     /* ============================================================
+       VOICE OF SLS — FRONT-LOADED QUOTE SHOWCASE
+    ============================================================ */
+    #voice-of-sls {
+      padding: 80px 0 100px;
+      background: linear-gradient(180deg, var(--black) 0%, var(--bg) 100%);
+      position: relative; overflow: hidden;
+    }
+    #voice-of-sls::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,212,255,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .voice-header { text-align: center; margin-bottom: 56px; }
+    .voice-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--blue2); font-weight: 700; margin-bottom: 16px;
+    }
+    .voice-eyebrow::before, .voice-eyebrow::after {
+      content: ''; display: block; width: 32px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--blue2));
+    }
+    .voice-eyebrow::after { background: linear-gradient(90deg, var(--blue2), transparent); }
+    .voice-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800; color: var(--white);
+      letter-spacing: -0.02em; line-height: 1.2;
+    }
+    .voice-title span { color: var(--blue2); }
+    .voice-sub { color: var(--muted); font-size: 0.95rem; margin-top: 10px; }
+    .voice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 20px;
+    }
+    .voice-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 32px;
+      position: relative; overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .voice-card:hover { border-color: rgba(0,212,255,0.25); transform: translateY(-3px); }
+    .voice-card.featured {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(0,212,255,0.05) 0%, var(--card) 60%);
+      border-color: rgba(0,212,255,0.2);
+    }
+    .voice-card.featured:hover { border-color: rgba(0,212,255,0.4); }
+    .voice-card::before {
+      content: '\201C';
+      position: absolute; top: 16px; right: 24px;
+      font-size: 5rem; line-height: 1;
+      color: rgba(0,212,255,0.06); font-family: Georgia, serif;
+      pointer-events: none;
+    }
+    .voice-card.featured::before { color: rgba(0,212,255,0.08); font-size: 7rem; }
+    .voice-quote-text {
+      font-size: 1.05rem; color: var(--white);
+      font-style: italic; line-height: 1.7;
+      margin-bottom: 20px; position: relative; z-index: 1;
+    }
+    .voice-card.featured .voice-quote-text { font-size: 1.2rem; }
+    .voice-attr {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .voice-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--blue2));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 700; color: var(--white);
+      flex-shrink: 0; letter-spacing: 0.05em;
+    }
+    .voice-attr-name { font-size: 0.82rem; font-weight: 700; color: var(--white); }
+    .voice-attr-meta { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+
+    /* ============================================================
+       CYBERSECURITY SECTION
+    ============================================================ */
+    #cybersecurity { padding: 120px 0; background: var(--bg); }
+    .cyber-header { text-align: center; margin-bottom: 64px; }
+    .cyber-header h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
+    .cyber-header p { color: var(--muted); font-size: 1.05rem; max-width: 640px; margin: 0 auto; line-height: 1.75; }
+    .cyber-phase-label {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--blue2); font-weight: 700; margin-bottom: 24px;
+      padding: 6px 14px; border: 1px solid rgba(0,212,255,0.25); border-radius: 20px;
+    }
+    .cyber-phase-label.gold { color: #c9a227; border-color: rgba(201,162,39,0.3); }
+    .cyber-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 60px;
+    }
+    .cyber-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 28px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .cyber-card:hover { border-color: rgba(0,212,255,0.3); transform: translateY(-4px); }
+    .cyber-card.gold-border:hover { border-color: rgba(201,162,39,0.4); }
+    .cyber-card-icon { font-size: 1.8rem; margin-bottom: 14px; }
+    .cyber-card-title { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+    .cyber-card-platform {
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--blue2); font-weight: 600; margin-bottom: 12px;
+    }
+    .cyber-card-platform.gold { color: #c9a227; }
+    .cyber-card ul { list-style: none; padding: 0; margin: 0; }
+    .cyber-card ul li {
+      font-size: 0.82rem; color: var(--muted); padding: 5px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      padding-left: 16px; position: relative; line-height: 1.5;
+    }
+    .cyber-card ul li:last-child { border-bottom: none; }
+    .cyber-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--blue2); font-size: 0.75rem; }
+    .cyber-card.gold-border ul li::before { color: #c9a227; }
+    .cyber-divider {
+      display: flex; align-items: center; gap: 20px;
+      margin: 48px 0 40px; color: var(--muted); font-size: 0.8rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .cyber-divider::before, .cyber-divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    }
+    .cyber-msa-note {
+      background: rgba(0,212,255,0.04); border: 1px solid rgba(0,212,255,0.12);
+      border-radius: 12px; padding: 24px 28px; margin-top: 40px;
+      display: flex; align-items: flex-start; gap: 16px;
+    }
+    .cyber-msa-note-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .cyber-msa-note-text { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+    .cyber-msa-note-text strong { color: var(--white); }
+    .cyber-jensen-quote {
+      background: rgba(201,162,39,0.05); border-left: 3px solid #c9a227;
+      border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 32px 0;
+    }
+    .cyber-jensen-quote p { font-size: 0.95rem; color: var(--white); font-style: italic; margin: 0 0 8px; line-height: 1.65; }
+    .cyber-jensen-quote span { font-size: 0.75rem; color: #c9a227; font-style: normal; font-weight: 600; }
+
+    /* ============================================================
        MOBILE RESPONSIVE
     ============================================================ */
     @media (max-width: 768px) {
@@ -1268,6 +1411,74 @@
   </div>
 </section>
 
+<!-- ==================== VOICE OF SLS ==================== -->
+<section id="voice-of-sls">
+  <div class="container">
+    <div class="voice-header reveal">
+      <div class="voice-eyebrow">In Their Own Words</div>
+      <div class="voice-title">This proposal was built around<br /><span>what SLS told us.</span></div>
+      <div class="voice-sub">Every priority, every feature, every agent — sourced directly from discovery conversations with your team.</div>
+    </div>
+    <div class="voice-grid">
+      <!-- Featured quote — Chad on brand narrative -->
+      <div class="voice-card featured reveal">
+        <div class="voice-quote-text">"We're a 20-year overnight success, but there's still some corners of this big old giant lighting world that still don't know us — or think of us like we're still four guys in a basement. Our competition has framed our narrative before we had the opportunity to."</div>
+        <div class="voice-attr">
+          <div class="voice-avatar">CH</div>
+          <div>
+            <div class="voice-attr-name">Chad Hughes, President</div>
+            <div class="voice-attr-meta">SLS Discovery Call &nbsp;·&nbsp; March 13, 2026</div>
+          </div>
+        </div>
+      </div>
+      <!-- Cody on Fortune 100 use case -->
+      <div class="voice-card reveal">
+        <div class="voice-quote-text">"We've got a big Fortune 100 client. They've got real estate all over the place. Is there a way to extrapolate — okay, which design firm does it? Who do we need to go talk to?"</div>
+        <div class="voice-attr">
+          <div class="voice-avatar">CN</div>
+          <div>
+            <div class="voice-attr-name">Cody Nichols, Regional Director</div>
+            <div class="voice-attr-meta">SLS Discovery Call &nbsp;·&nbsp; March 17, 2026</div>
+          </div>
+        </div>
+      </div>
+      <!-- Cody on excitement about AI -->
+      <div class="voice-card reveal">
+        <div class="voice-quote-text">"Really excited to dive into this... Something that I'm personally intrigued by. I've started using AI in my personal life — and talking about how we could apply it to the business would be pretty interesting."</div>
+        <div class="voice-attr">
+          <div class="voice-avatar">CN</div>
+          <div>
+            <div class="voice-attr-name">Cody Nichols, Regional Director</div>
+            <div class="voice-attr-meta">SLS Discovery Call &nbsp;·&nbsp; March 17, 2026</div>
+          </div>
+        </div>
+      </div>
+      <!-- Chad on theoretical to practical -->
+      <div class="voice-card reveal">
+        <div class="voice-quote-text">"It's gone from theoretical to practical, which I'm a big fan of."</div>
+        <div class="voice-attr">
+          <div class="voice-avatar">CH</div>
+          <div>
+            <div class="voice-attr-name">Chad Hughes, President</div>
+            <div class="voice-attr-meta">SLS Discovery Call &nbsp;·&nbsp; March 13, 2026</div>
+          </div>
+        </div>
+      </div>
+      <!-- Cody on openness to new ideas -->
+      <div class="voice-card featured reveal" style="background:linear-gradient(135deg, rgba(201,162,39,0.05) 0%, var(--card) 60%);border-color:rgba(201,162,39,0.2);">
+        <div class="voice-quote-text">"We're very, very open to new ideas. Just because we've done something a certain way for years doesn't mean we're going to do it the same way tomorrow. If there's a better way, we jump on it."</div>
+        <div class="voice-attr">
+          <div class="voice-avatar" style="background:linear-gradient(135deg,#7a5c00,#c9a227);">CN</div>
+          <div>
+            <div class="voice-attr-name">Cody Nichols, Regional Director</div>
+            <div class="voice-attr-meta">SLS Discovery Call &nbsp;·&nbsp; March 17, 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ==================== DATING PHASE ==================== -->
 <section id="dating">
   <div class="accent-line"></div>
@@ -1276,14 +1487,6 @@
     <div class="section-label">The Engagement Model</div>
     <h2>The Dating Phase.</h2>
     <p class="section-sub">We don't ask for a long-term commitment before we've proven our value. You don't give someone an engagement ring on the first date.</p>
-
-    <!-- Pull Quote: Chad on going from theoretical to practical -->
-    <div class="pq-wrap reveal">
-      <div class="pq-card">
-        <div class="pq-text">"It's gone from theoretical to practical, which I'm a big fan of."</div>
-        <div class="pq-attr">Chad Hughes, President <span>· SLS Discovery Call, March 13, 2026</span></div>
-      </div>
-    </div>
 
     <div class="dating-grid">
       <div class="pricing-card reveal">
@@ -1402,14 +1605,6 @@
           <div class="jensen-quote-text">OpenClaw is the operating system for personal AI. It has made it possible for the entire industry to grab onto this open-source stack and go do something with it.</div>
           <div class="jensen-quote-attr">On OpenClaw's role in AI</div>
         </div>
-      </div>
-    </div>
-
-    <!-- Pull Quote: Cody on excitement -->
-    <div class="pq-wrap reveal">
-      <div class="pq-card">
-        <div class="pq-text">"Really excited to kind of dive into this... Something that I'm personally intrigued by. I've kind of started using AI a little bit more in my personal life recently — and talking about how we could apply it to the business would be pretty interesting."</div>
-        <div class="pq-attr">Cody Nichols, Regional Director <span>· SLS Discovery Call, March 17, 2026</span></div>
       </div>
     </div>
 
@@ -1609,14 +1804,6 @@
       <p class="section-sub" style="margin:16px auto 0;max-width:580px;">Every priority below came directly from discovery conversations with Chad Hughes, Blair Frost, and Cody Nichols. This isn't a generic AI pitch — it's your specific roadmap.</p>
     </div>
 
-    <!-- Pull Quote: Cody on AI rep assistant use case -->
-    <div class="pq-wrap reveal">
-      <div class="pq-card">
-        <div class="pq-text">"We've got a big Fortune 100 client. They've got real estate all over the place. Is there a way to extrapolate — okay, which design firm does it? Who do we need to go talk to?"</div>
-        <div class="pq-attr">Cody Nichols, Regional Director <span>· SLS Discovery Call, March 17, 2026</span></div>
-      </div>
-    </div>
-
     <div class="needs-grid">
       <div class="need-card reveal">
         <div class="need-num">01</div>
@@ -1662,13 +1849,6 @@
       </div>
     </div>
 
-    <!-- Pull Quote: Chad on brand perception -->
-    <div class="pq-wrap reveal">
-      <div class="pq-card">
-        <div class="pq-text">"We're a 20-year overnight success, but there's still some corners of this big old giant lighting world that still don't know us — or think of us like we're still four guys in a basement. Our competition has framed our narrative before we had the opportunity to."</div>
-        <div class="pq-attr">Chad Hughes, President <span>· SLS Discovery Call, March 13, 2026</span></div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1729,6 +1909,141 @@
 </section>
 
 
+
+<!-- ==================== CYBERSECURITY ==================== -->
+<section id="cybersecurity">
+  <div class="accent-line"></div>
+  <div class="container">
+    <div class="cyber-header reveal">
+      <div class="section-label" style="justify-content:center;">
+        <span style="display:block;width:24px;height:2px;background:linear-gradient(90deg,var(--navy),var(--blue2));"></span>
+        Security &amp; Compliance
+      </div>
+      <h2>Enterprise-grade security.<br />Built into every layer.</h2>
+      <p>SLS's data is handled across three platforms during Phase 1. Here's exactly what each one brings to the table — contractually backed by MSA Section 7.</p>
+    </div>
+
+    <!-- PHASE 1 -->
+    <div class="cyber-phase-label reveal">●&nbsp; Phase 1 — Active Now (Dating Phase)</div>
+    <div class="cyber-grid reveal">
+
+      <!-- Microsoft 365 -->
+      <div class="cyber-card">
+        <div class="cyber-card-icon">📧</div>
+        <div class="cyber-card-platform">Microsoft 365</div>
+        <div class="cyber-card-title">Enterprise Identity &amp; Collaboration Security</div>
+        <ul>
+          <li>Azure Active Directory — SSO, MFA, and conditional access policies</li>
+          <li>Microsoft Defender for Office 365 — anti-phishing, malware, and safe links</li>
+          <li>Data Loss Prevention (DLP) policies across Outlook, Teams, and SharePoint</li>
+          <li>Encryption in transit (TLS 1.2+) and at rest (AES-256) for all M365 data</li>
+          <li>Compliance Center: eDiscovery, audit logs, retention policies</li>
+          <li>Role-based access control (RBAC) — least-privilege access enforced</li>
+          <li>SOC 2 Type II, ISO 27001, FedRAMP, HIPAA BAA, GDPR compliant</li>
+          <li>Taptico uses minimum-privilege integration credentials — never shared with third parties (MSA §7.4)</li>
+        </ul>
+      </div>
+
+      <!-- OpenClaw / Taptico Infrastructure -->
+      <div class="cyber-card">
+        <div class="cyber-card-icon">🔐</div>
+        <div class="cyber-card-platform">OpenClaw · Taptico-Managed Infrastructure</div>
+        <div class="cyber-card-title">AI Agent Runtime Security</div>
+        <ul>
+          <li>Sandboxed runtime environments — agent operations isolated from host network (MSA §7.1a)</li>
+          <li>Policy-based network guardrails — agents cannot access external services without explicit permission (MSA §7.1b)</li>
+          <li>Privacy Router — enforces data classification and transmission rules jointly defined with SLS (MSA §4.5)</li>
+          <li>Taptico-managed model execution for sensitive data — no raw data sent to frontier AI APIs (MSA §4.3)</li>
+          <li>AES-256 encrypted storage for all Client Data at rest (MSA §7.1e)</li>
+          <li>No Client Data used for AI model training — ever (MSA §4.3)</li>
+          <li>Sub-processors bound by data protection obligations no less protective than the MSA (MSA §4.6)</li>
+          <li>72-hour breach notification obligation to SLS (MSA §7.2e)</li>
+        </ul>
+      </div>
+
+      <!-- The Grid (Manus) -->
+      <div class="cyber-card">
+        <div class="cyber-card-icon">📊</div>
+        <div class="cyber-card-platform">The Grid · Taptico Portal</div>
+        <div class="cyber-card-title">Project Intelligence Portal Security</div>
+        <ul>
+          <li>TLS 1.2+ encryption for all data in transit (MSA §7.2a)</li>
+          <li>AES-256 encryption for all data at rest (MSA §7.2a)</li>
+          <li>Role-based access controls — each SLS team member sees only what they need (MSA §7.2b)</li>
+          <li>Multi-factor authentication (MFA) required for all Taptico personnel accessing Client Data (MSA §7.2c)</li>
+          <li>Regular security assessments and vulnerability scanning (MSA §7.2d)</li>
+          <li>Automated backups — RPO: 24 hours, RTO: 48 hours (MSA §8.2)</li>
+          <li>Data export on termination: CSV, JSON, PDF, XLSX within 30 days (MSA §6.3)</li>
+          <li>Written data destruction certification provided upon termination (MSA §6.3)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Compliance summary note -->
+    <div class="cyber-msa-note reveal">
+      <div class="cyber-msa-note-icon">📄</div>
+      <div class="cyber-msa-note-text">
+        <strong>Contractually Guaranteed.</strong> All security obligations above are codified in the Taptico × SLS Master Service Agreement (MSA), Sections 4, 7, 8, and 9. SLS retains the right to audit Taptico's compliance once per 12-month period with 30 days' written notice (MSA §14.2). Taptico complies with CCPA, CAN-SPAM, and all applicable federal and Georgia state data protection regulations. Governing law: State of Georgia. Disputes resolved by binding arbitration in Atlanta, GA (MSA §15).
+      </div>
+    </div>
+
+    <!-- PHASE 2 NEMOCLAW DIVIDER -->
+    <div class="cyber-divider reveal">Phase 2 — What NemoClaw Adds</div>
+
+    <!-- Jensen quote on NemoClaw -->
+    <div class="cyber-jensen-quote reveal">
+      <p>"OpenClaw is the operating system for personal AI. NemoClaw adds the security and privacy controls enterprises need — so developers can build and run AI assistants with more confidence."</p>
+      <span>Jensen Huang, CEO — NVIDIA &nbsp;·&nbsp; GTC 2026 Keynote, March 16, 2026</span>
+    </div>
+
+    <div class="cyber-phase-label gold reveal">○&nbsp; Phase 2 — Custom Build (Post-90 Days)</div>
+    <div class="cyber-grid reveal">
+
+      <!-- OpenShell Sandbox -->
+      <div class="cyber-card gold-border">
+        <div class="cyber-card-icon">🛡️</div>
+        <div class="cyber-card-platform gold">NemoClaw · OpenShell Runtime</div>
+        <div class="cyber-card-title">Kernel-Level Sandbox Isolation</div>
+        <ul>
+          <li>OpenShell wraps every agent in a kernel-level security sandbox — agents cannot escape their defined operating boundary</li>
+          <li>Agents operate and adapt autonomously within the sandbox without access to unauthorized systems</li>
+          <li>Prevents remote compromise vectors that affected vanilla OpenClaw deployments</li>
+          <li>Fully open source — auditable by SLS or any third-party security firm</li>
+          <li>Hardware agnostic — runs on NVIDIA DGX Spark at SLS's Atlanta office</li>
+        </ul>
+      </div>
+
+      <!-- Privacy Router -->
+      <div class="cyber-card gold-border">
+        <div class="cyber-card-icon">🔄</div>
+        <div class="cyber-card-platform gold">NemoClaw · Privacy Router</div>
+        <div class="cyber-card-title">Policy-Based Data Guardrails</div>
+        <ul>
+          <li>Monitors all agent communications in real time — blocks unauthorized data transmission before it leaves the device</li>
+          <li>Policy rules defined by SLS: what data categories can leave, which cloud endpoints are approved, what must be redacted</li>
+          <li>Connects agents to frontier cloud models (Nemotron, etc.) only within defined privacy boundaries</li>
+          <li>Full audit trail of every data transmission decision — logged and reviewable by SLS</li>
+          <li>Policies modifiable only by mutual written agreement (MSA §4.5)</li>
+        </ul>
+      </div>
+
+      <!-- NVIDIA Agent Toolkit + Compliance -->
+      <div class="cyber-card gold-border">
+        <div class="cyber-card-icon">✅</div>
+        <div class="cyber-card-platform gold">NemoClaw · NVIDIA Agent Toolkit</div>
+        <div class="cyber-card-title">Enterprise Trust &amp; Compliance Layer</div>
+        <ul>
+          <li>AI-Q reasoning framework — agents produce explainable, auditable results (not black-box outputs)</li>
+          <li>NVIDIA Nemotron open models run locally on DGX Spark — sensitive data never leaves SLS's premises</li>
+          <li>Integrates with NeMo ecosystem for enterprise-grade agent governance and observability</li>
+          <li>Single-command install — NemoClaw deploys the full security stack in one step</li>
+          <li>SLS owns the hardware; Taptico's agent configurations are licensed IP (MSA §5.3)</li>
+          <li>Agents continue running locally even if Taptico's infrastructure goes offline</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ==================== PHASE 2 POSSIBILITIES ==================== -->
 <section id="phase2">
@@ -1856,14 +2171,6 @@
         <img src="assets/sls-sun-icon.png" alt="Southern Lighting Source" style="height:40px;" />
       </div>
     </div>
-    <!-- Pull Quote: Cody on openness to new ideas -->
-    <div class="pq-wrap reveal" style="margin-bottom:48px;">
-      <div class="pq-card">
-        <div class="pq-text">"We're very, very open to new ideas. Just because we've done something a certain way for years doesn't mean we're going to do it the same way tomorrow. If there's a better way, we jump on it."</div>
-        <div class="pq-attr">Cody Nichols, Regional Director <span>· SLS Discovery Call, March 17, 2026</span></div>
-      </div>
-    </div>
-
     <div class="cta-eyebrow">Ready to start?</div>
     <h2 class="cta-title">Let's build something<br />remarkable for Southern Lighting Source.</h2>
     <p class="cta-sub">Invoice 1 is $5,000, due before March 23, 2026 — the day work begins. Three deliverables. Twelve weeks. No long-term commitment required until you've seen it work.</p>
