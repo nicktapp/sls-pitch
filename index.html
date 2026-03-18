@@ -1147,7 +1147,57 @@
       .hero-cobrand { flex-wrap: wrap; justify-content: center; }
       /* Mobile: simple fade-in replaces complex animations */
       .reveal { transition: opacity 0.6s ease, transform 0.6s ease; }
+      .pq-wrap { margin: 40px 0; }
     }
+
+    /* ---- Pull Quotes ---- */
+    .pq-wrap {
+      margin: 56px auto;
+      max-width: 760px;
+      position: relative;
+      z-index: 1;
+    }
+    .pq-card {
+      background: linear-gradient(135deg, rgba(0,48,135,0.12) 0%, rgba(0,212,255,0.05) 100%);
+      border: 1px solid rgba(29,110,245,0.22);
+      border-left: 4px solid var(--blue2);
+      border-radius: 0 16px 16px 0;
+      padding: 28px 36px;
+      position: relative;
+    }
+    .pq-card::before {
+      content: '\201C';
+      position: absolute;
+      top: -10px; left: 16px;
+      font-size: 5rem; line-height: 1;
+      color: var(--blue2); opacity: 0.35;
+      font-family: Georgia, serif;
+    }
+    .pq-text {
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+    .pq-attr {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+    .pq-attr span {
+      color: var(--muted);
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    body.light-mode .pq-card {
+      background: linear-gradient(135deg, rgba(0,48,135,0.06) 0%, rgba(0,212,255,0.03) 100%);
+      border-color: rgba(29,110,245,0.3);
+    }
+    body.light-mode .pq-text { color: #0a0f1e; }
   </style>
 </head>
 <body>
@@ -1199,8 +1249,8 @@
   </div>
 
   <h1 class="hero-title" id="hero-title">
-    SLS, meet your<br />
-    <span class="gradient-text">unfair advantage.</span>
+    Southern Lighting Source,<br />
+    meet your <span class="gradient-text">unfair advantage.</span>
   </h1>
 
   <p class="hero-sub" id="hero-sub">
@@ -1226,6 +1276,14 @@
     <div class="section-label">The Engagement Model</div>
     <h2>The Dating Phase.</h2>
     <p class="section-sub">We don't ask for a long-term commitment before we've proven our value. You don't give someone an engagement ring on the first date.</p>
+
+    <!-- Pull Quote: Chad on going from theoretical to practical -->
+    <div class="pq-wrap reveal">
+      <div class="pq-card">
+        <div class="pq-text">"It's gone from theoretical to practical, which I'm a big fan of."</div>
+        <div class="pq-attr">Chad Hughes, President &amp; CEO <span>· SLS Discovery Call, March 13, 2026</span></div>
+      </div>
+    </div>
 
     <div class="dating-grid">
       <div class="pricing-card reveal">
@@ -1344,6 +1402,14 @@
           <div class="jensen-quote-text">OpenClaw is the operating system for personal AI. It has made it possible for the entire industry to grab onto this open-source stack and go do something with it.</div>
           <div class="jensen-quote-attr">On OpenClaw's role in AI</div>
         </div>
+      </div>
+    </div>
+
+    <!-- Pull Quote: Cody on excitement -->
+    <div class="pq-wrap reveal">
+      <div class="pq-card">
+        <div class="pq-text">"Really excited to kind of dive into this... Something that I'm personally intrigued by. I've kind of started using AI a little bit more in my personal life recently — and talking about how we could apply it to the business would be pretty interesting."</div>
+        <div class="pq-attr">Cody Nichols, Regional Director <span>· SLS Discovery Call, March 17, 2026</span></div>
       </div>
     </div>
 
@@ -1543,6 +1609,14 @@
       <p class="section-sub" style="margin:16px auto 0;max-width:580px;">Every priority below came directly from discovery conversations with Chad Hughes, Blair Frost, and Cody Nichols. This isn't a generic AI pitch — it's your specific roadmap.</p>
     </div>
 
+    <!-- Pull Quote: Cody on AI rep assistant use case -->
+    <div class="pq-wrap reveal">
+      <div class="pq-card">
+        <div class="pq-text">"We've got a big Fortune 100 client. They've got real estate all over the place. Is there a way to extrapolate — okay, which design firm does it? Who do we need to go talk to?"</div>
+        <div class="pq-attr">Cody Nichols, Regional Director <span>· SLS Discovery Call, March 17, 2026</span></div>
+      </div>
+    </div>
+
     <div class="needs-grid">
       <div class="need-card reveal">
         <div class="need-num">01</div>
@@ -1580,11 +1654,19 @@
         <div class="need-desc">Reduce meetings and mental overhead by automating repetitive tasks, follow-ups, and gratitude workflows. The Scribe agent auto-transcribes meetings, extracts action items, and routes tasks to the right team member — all filed automatically in The Grid.</div>
         <div class="need-tags"><span class="tag">Auto Follow-Ups</span><span class="tag">Meeting AI</span><span class="tag">Task Routing</span></div>
       </div>
-      <div class="need-card reveal">
+      <div class="need-card reveal" style="grid-column: 1 / -1; max-width: 100%;">
         <div class="need-num">07</div>
         <div class="need-title">Brand Presence & Market Expansion</div>
         <div class="need-desc">AI-powered marketing to elevate SLS's visibility with marquee clients. Strategic support for expansion into solar and EV charging sectors — with content, outreach, and positioning built by the Slingshot Squad.</div>
         <div class="need-tags"><span class="tag">AI Marketing</span><span class="tag">Solar Expansion</span><span class="tag">EV Charging</span></div>
+      </div>
+    </div>
+
+    <!-- Pull Quote: Chad on brand perception -->
+    <div class="pq-wrap reveal">
+      <div class="pq-card">
+        <div class="pq-text">"We're a 20-year overnight success, but there's still some corners of this big old giant lighting world that still don't know us — or think of us like we're still four guys in a basement. Our competition has framed our narrative before we had the opportunity to."</div>
+        <div class="pq-attr">Chad Hughes, President &amp; CEO <span>· SLS Discovery Call, March 13, 2026</span></div>
       </div>
     </div>
   </div>
@@ -1733,8 +1815,16 @@
         <img src="assets/sls-sun-icon.png" alt="Southern Lighting Source" style="height:40px;" />
       </div>
     </div>
+    <!-- Pull Quote: Cody on openness to new ideas -->
+    <div class="pq-wrap reveal" style="margin-bottom:48px;">
+      <div class="pq-card">
+        <div class="pq-text">"We're very, very open to new ideas. Just because we've done something a certain way for years doesn't mean we're going to do it the same way tomorrow. If there's a better way, we jump on it."</div>
+        <div class="pq-attr">Cody Nichols, Regional Director <span>· SLS Discovery Call, March 17, 2026</span></div>
+      </div>
+    </div>
+
     <div class="cta-eyebrow">Ready to start?</div>
-    <h2 class="cta-title">Let's build something<br />remarkable for SLS.</h2>
+    <h2 class="cta-title">Let's build something<br />remarkable for Southern Lighting Source.</h2>
     <p class="cta-sub">Invoice 1 is $5,000, due before March 23, 2026 — the day work begins. Three deliverables. Twelve weeks. No long-term commitment required until you've seen it work.</p>
     <div class="cta-actions">
       <a class="btn-primary" href="mailto:nick@taptico.com?subject=SLS%20Engagement%20%E2%80%94%20Let%27s%20Start">Email Nick Directly</a>
